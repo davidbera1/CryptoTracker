@@ -1,4 +1,4 @@
-package com.db.cryptotracker.util
+package com.db.cryptotracker.core.presentation.util
 
 import com.db.cryptotracker.R
 
