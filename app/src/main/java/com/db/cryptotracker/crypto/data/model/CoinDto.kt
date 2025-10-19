@@ -1,6 +1,9 @@
-package com.db.cryptotracker.crypto.domain
+package com.db.cryptotracker.crypto.data.model
 
-data class Coin(
+import kotlinx.serialization.Serializable
+
+@Serializable
+data class CoinDto(
     val id: String,
     val rank: Int,
     val name: String,
