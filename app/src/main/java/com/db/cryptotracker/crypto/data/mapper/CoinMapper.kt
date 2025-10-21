@@ -1,7 +1,11 @@
 package com.db.cryptotracker.crypto.data.mapper
 
 import com.db.cryptotracker.crypto.data.model.CoinDto
+import com.db.cryptotracker.crypto.data.model.CoinPriceDto
 import com.db.cryptotracker.crypto.domain.model.Coin
+import com.db.cryptotracker.crypto.domain.model.CoinPrice
+import java.time.Instant
+import java.time.ZoneId
 
 fun CoinDto.toCoin(): Coin {
     return Coin(
@@ -12,5 +16,14 @@ fun CoinDto.toCoin(): Coin {
         marketCapUsd = marketCapUsd,
         priceUsd = priceUsd,
         changePercent24Hr = changePercent24Hr
+    )
+}
+
+fun CoinPriceDto.toCoinPrice(): CoinPrice {
+    return CoinPrice(
+        priceUsd = priceUsd,
+        dateTime = Instant
+            .ofEpochMilli(time)
+            .atZone(ZoneId.of("UTC"))
     )
 }
